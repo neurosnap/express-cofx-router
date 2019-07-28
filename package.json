@@ -1,0 +1,46 @@
+{
+  "name": "express-cofx-router",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "npmClient": "yarn",
+  "license": "MIT",
+  "author": "Eric Bower",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/neurosnap/express-cofx-router.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc --noEmit && jest",
+    "prepublish": "yarn build",
+    "start": "ts-node index.ts"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.8",
+    "husky": "^3.0.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.13.7",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.8.0",
+    "tslint-config-prettier": "^1.13.0",
+    "tslint-no-circular-imports": "^0.7.0",
+    "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
